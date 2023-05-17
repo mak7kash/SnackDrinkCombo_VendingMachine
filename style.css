@@ -27,67 +27,16 @@ nav {
 }
 
 .burger-menu {
-    visibility: hidden;
-    display: flex;
-    justify-content: flex-end;
-    align-items:center;
-    position: absolute;
-    right: 0;
+    display: none;
+    cursor: pointer;
 }
 
-.burger-menu:hover {
-    width: 100%;
-    height: 100%;
-}
-
-.burger-menu:hover .dropdown-menu {
-    visibility: visible;
-    opacity: 100%;
-    height: 180px;
-}
-
-.burger-menu-icon {
-    width:50px;
-    height: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
-.burger-menu-icon span {
-    width: 30px;
+.burger-menu span {
+    display: inline-block;
+    width:30px;
     border: 2px solid #3F8EF7;
     margin-bottom: 7px;
     transition: 0.5s;
-}
-
-.burger-menu:hover span:nth-child(3) {
-    width: 0;
-    border-color: #fff;
-}
-
-.burger-menu:hover span:nth-child(2) {
-    transform: rotate(-45deg);
-
-}
-
-.burger-menu:hover span:nth-child(1) {
-   transform: translateY(11px) rotate(45deg) ;
-}
-
-.dropdown-menu {
-    visibility: hidden;
-    opacity: 0%;
-    width: 1440px;
-    height: 0px;
-    padding: 15px;
-    position: fixed;
-    left: 0px;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #f1f1f1;
-    transition:0.5s
 }
 
 .logo {
@@ -104,7 +53,7 @@ nav {
 }
 
 menu {
-    width: 420px;
+    width: 570px;
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -112,29 +61,34 @@ menu {
 
 }
 
-menu a, .dropdown-menu a{
+menu a{
     color: #5AC4F8;
     transition: 0.1s;
 }
 
-menu a, .dropdown-menu a:hover {
+menu a:hover {
     color: #3F8EF7;
 }
 
-.contact-us, .contact-us-2{
+.contact-us{
     width: 150px;
     height: 50px;
     background-color: #5AC4F8;
     border-radius: 3px;
 }
 
-.contact-us a, .contact-us-2 a {
+.contact-us a {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 20px;
     color: #FFFFFF;
+}
+
+.contact-us {
+    cursor: pointer;
+    color: #fff;
 }
 
 .block-1 {
@@ -231,7 +185,7 @@ menu a, .dropdown-menu a:hover {
 .block-2-btn {
     width: 150px;
     height: 50px;
-    margin-top: 60px;
+    margin-top: 10px;
     background-color: #5AC4F8;
     font-family: 'Montserrat';
     font-style: normal;
@@ -249,7 +203,7 @@ menu a, .dropdown-menu a:hover {
 
 .block-3 {
     max-width: 1440px;
-    height: 750px;
+    height: 790px;
     display: flex;
     justify-content: space-around;
     align-items:center;
@@ -411,9 +365,9 @@ menu a, .dropdown-menu a:hover {
     color: #5AC4F8;
 }
 
-.form {
+form {
     width: 100%;
-    height: 565px;
+    height: 540px;
     margin-top: 90px;
     display: flex;
     flex-direction: column;
@@ -618,15 +572,48 @@ footer {
         padding: 0 30px;
     }
 
-    menu {
-        display: none;
-    }
-    .contact-us{
-        display: none;
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
     }
 
-    .burger-menu {
-        visibility: visible;
+    .burger-menu.active span:nth-child(3) {
+        width: 0;
+        border-color: #fff;
+    }
+    
+    .burger-menu.active span:nth-child(2) {
+        transform: rotate(-45deg);
+    
+    }
+    
+    .burger-menu.active span:nth-child(1) {
+       transform: translateY(11px) rotate(45deg) ;
+    }
+
+    menu {
+        position: fixed;
+        height: 200px;
+        left: -100%;
+        top: 100px;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    menu a {
+        margin: 10px 0;
+    }
+
+    .contact-us {
+        margin: 10px 0;
+    }
+
+    menu.active {
+        left:0;
+        height: 200px;
     }
 }
 
@@ -730,7 +717,7 @@ footer {
         text-align: center;
     }
 
-    .form {
+    form {
         margin: 0;
         height: 670px;
     }

@@ -8,30 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Solution Vending Machine</title>
 </head>
 <body>
     <div class="wrapper">
-        <nav>
+        <nav class="nabar">
             <h1 class="logo"><a href="#">Solution Vending Machines</a></h1>
-            <menu>
-                <a href="#block-2">WHO WE ARE</a>
-                <a href="#block-3">WHAT WE DO</a>
-                <a href="#block-4">ABOUT</a>
+            <menu class="nav-menu">
+                <a class="menu-element" href="#block-2">WHO WE ARE</a>
+                <a class="menu-element" href="#block-3">WHAT WE DO</a>
+                <a class="menu-element" href="#block-4">ABOUT</a>
+                <button class="contact-us menu-element" onclick="location.href='#cooperate'">CONTACT US</button>
             </menu>
-            <button class="contact-us"><a href="#cooperate">CONTACT US</a></button>
             <div class="burger-menu">
-                <div class="burger-menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="dropdown-menu">
-                    <a href="#block-2">WHO WE ARE</a>
-                    <a href="#block-3">WHAT WE DO</a>
-                    <a href="#block-4">ABOUT</a>
-                    <button class="contact-us-2"><a href="#cooperate">CONTACT US</a></button>
-                </div>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
         <header class="block-1">
@@ -47,7 +39,7 @@
                 <span>About</span>
                 <h3 class="block-2-header">Who we are</h3>
                 <p class="block-2-text"><b>Solution Vending Machines</b>  is a distributor provider throughout London. We concentrate on the supply of quality vending machines and cooperation with other companies that are interested in this field of activity.</p>
-                <button class="block-2-btn">LEARN MORE</button>
+                <button class="block-2-btn" onclick="location.href='#cooperate'">COOPERATE</button>
             </aside>
             <img src="./images/img-2.jpg" alt="" class="img2">
         </div>
@@ -58,7 +50,6 @@
                 <span>About</span>
                 <h3 class="block-3-header">What we do</h3>
                 <p class=block-3-text>We are able to provide own list of products which will be included in vending machines as a base. However, it is possible to customize as you wish, or even you can create own list of products which should be included. Additionally, we can consult you what might be better to drop in or find all your suggested products. </p>
-                <button class="block-3-btn">COOPERATE</button>
             </aside>
         </div>
         <a name="block-4"></a>
@@ -95,16 +86,24 @@
             </div>
         </div>
         <a name="cooperate"></a>
-        <div class="form">
-            <h3 class="form-header">Want to cooperate?</h3>
-            <div class="name-email">
-                <input type="text" size="30" class="input-name" placeholder='Your Name*'>
-                <input type="email" class="input-email" placeholder='Email*'>
-            </div>
-            <input type="text" class="input-number" placeholder='Phone number*'>
-            <textarea type="text" class="input-wishes" placeholder="Your Wishes and suggustions...*"></textarea>
-            <button class="get-in-touch">Get in Touch</button>
-        </div>
+        <form>
+
+            <!--Hidden required  fields-->
+            <input type="hidden" name="project_name" value="Solution Vending Machine">
+            <input type="hidden" name="admin_email" value="support@solution-vending.uk">
+            <input type="hidden" name="form_subject" value="Footer form">
+             <!--End of Hidden required  fields-->
+
+             
+                <h3 class="form-header">Want to cooperate?</h3>
+                <div class="name-email">
+                    <input type="text" class="input-name" placeholder='Your Name*' id="name" name="name" required>
+                    <input type="email" class="input-email" id="email" name="email"   placeholder='Email*' required>
+                </div>
+                <input type="text" class="input-number" placeholder='Phone number*' name="phone" required>
+                <textarea type="text" class="input-wishes" placeholder="Your Wishes and suggustions..." name="message"></textarea>
+                <button type="submit" value="SEND" class="get-in-touch">Get in Touch</button>
+        </form>
         <footer>
             <h1 class="footer-logo"><a href="#">Solution Vending Machines</a></h1>
             <div class="address">
@@ -119,5 +118,7 @@
             </div>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
